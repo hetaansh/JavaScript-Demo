@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <body style="text-align:center ;">
+        <h2 style="color: violet;">2. Show / Hide HTML tag on button click.</h2>
+        <p style="color:violet ; font-size: 30px;" id="dummy">You can Show and Hide me with the below buttons.</p>
+        <button onclick="hide()">Hide the text above</button>
+        <button onclick="show()">Show the text above</button>
+        
+        
+
+        <script>     
+          
+        function hide() {
+            let x = document.getElementById("dummy");
+            x.style.visibility="hidden";
+        }
+
+        function show() {
+            let x = document.getElementById("dummy");
+            x.style.visibility="visible";
+        }
+        </script>
+    </body>
+</html>

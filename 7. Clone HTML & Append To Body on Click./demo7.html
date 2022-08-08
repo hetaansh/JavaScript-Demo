@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <body style="text-align:left ;">
+        <h2 style="color: violet;">7. Clone HTML & Append To Body on Click.</h2>
+
+        <ul id="list1">
+            <li>Coffee</li>
+            <li>Tea</li>
+        </ul>
+
+        <ul id="list2">
+            <li id="water">Water</li>
+            <li id="milk">Milk</li>
+        </ul>
+        <br>
+
+        <p>Click button to clone (Milk/Water) from list 2 to list 1.</p>
+
+        <input type="button" id="btn" onclick="clone1()" value="Click to clone Milk">
+        <input type="button" id="btn" onclick="clone2()" value="Click to clone Water">
+
+        <script>
+            function clone1(){
+               let ul = document.getElementById("milk");
+               let li = ul.cloneNode(true);
+               document.getElementById("list1").appendChild(li);    
+            }
+
+            function clone2(){
+                let ul = document.getElementById("water");
+                let li = ul.cloneNode(true);
+                document.getElementById("list1").appendChild(li);
+            }
+        </script>
+       
+    </body>
+</html>

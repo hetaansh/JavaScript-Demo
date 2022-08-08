@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <body style="text-align:center ;">
+        <h2 style="color: violet;">3. Show result of Price into Quantity.</h2>
+        Price <input type="text" id="price" oninput="bill()">
+        X Qty <input type="text" id="qty" oninput="bill()">
+        <p id="product" style="color: violet; font-size: 30px;">0</p>
+
+        <script>
+            
+            function bill() {
+                let newPrice = document.getElementById("price").value;
+                let newQty = document.getElementById("qty").value;
+                let newProduct = newPrice*newQty;
+                document.getElementById("product").textContent = newProduct;
+            }
+
+        </script>
+    </body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <body style="text-align:center ;">
+        <h2 style="color: violet;">8. Increment Decrement Value.</h2>
+
+        <div class="counter">
+            <button id="dec" onclick="decrement()"> - </button> 
+            <input type="text" id="count" value="0" style="width: 5%; text-align: center;"> 
+            <button id="inc" onclick="increment()"> + </button>
+        </div>
+           
+        <script>
+            let newCount = document.getElementById("count").value;
+
+            function decrement(){
+                newCount--;
+                document.getElementById("count").value = newCount;
+            }
+
+            function increment(){
+                newCount++; 
+                document.getElementById("count").value = newCount;
+            }
+        </script>
+
+        
+    </body>
+</html>

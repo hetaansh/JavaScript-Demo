@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <body style="text-align:center ;">
+        <h2 style="color: violet;">9. Clone Increment Decrement Div on Click.</h2>
+        
+        <div id="counter">
+            <div>
+                <div>
+                    <button onclick="decrement(this)"> - </button> 
+                    <input type="text" id="count" value="0" style="width: 5%; text-align: center;"> 
+                    <button onclick="increment(this)"> + </button>
+                </div> 
+            </div>
+        </div>
+
+        <div id="newCounter"></div> 
+
+        <button id="btn">clone</button>
+
+        <script>
+            
+            document.getElementById("btn").addEventListener("click",clone);
+
+            function clone(){
+                let divs = document.getElementById("counter");
+                let clonedDivs = divs.cloneNode(divs,true);
+                document.getElementById("newCounter").appendChild(clonedDivs);
+            }
+        
+            function increment(event) {    
+                event.parentElement.querySelector("#count").value++;
+            }
+
+            function decrement(event) {
+                event.parentElement.querySelector("#count").value--;
+            }
+            
+        </script>
+       
+    </body>
+</html>

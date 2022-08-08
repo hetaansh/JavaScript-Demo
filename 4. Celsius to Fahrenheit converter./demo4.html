@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <body style="text-align:center ;">
+        <h2 style="color: violet;">4. Celsius to Fahrenheit converter.</h2>
+        <input style="height:25px;" type="text" id="box1" oninput="convertCF()">
+        =
+        <input style="height: 25px;" type="text" id="box2" oninput="convertFC()">
+
+
+        <br>
+        <input type="text" value=" Celsius"> &nbsp;&nbsp;&nbsp;<input type="text" value="Fahrenheit">
+       
+
+        <script>
+            function convertCF() {
+                let degFahr = document.getElementById("box1").value;
+                degFahr = degFahr*1.8+32;
+                document.getElementById("box2").value = degFahr;
+            }
+
+            function convertFC() {
+                let degCel = document.getElementById("box2").value;
+                degCel = (degCel-32)/1.8;
+                document.getElementById("box1").value = degCel;
+            }
+        </script>
+    </body>
+</html>

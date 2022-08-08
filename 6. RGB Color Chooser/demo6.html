@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <body style="text-align:center ;">
+        <h2 style="color: violet;">6. RGB Color Chooser</h2>
+        <input type="text" readonly="readonly" id="colorbox" style="height:40px ; width: 25% ;">
+        <br>
+        <br>
+
+        <div>
+            R: <input type="text" id="redvalue" style="width: 5%;">
+            <input type="range" min="0" max="255" id="redbar" oninput="printValue()">
+        </div>
+        
+        <br>
+
+        <div>
+            G: <input type="text" id="greenvalue" style="width: 5%;">
+            <input type="range" min="0" max="255" id="greenbar" oninput="printValue()">
+        </div>
+        
+        <br>
+
+        <div>
+            B: <input type="text" id="bluevalue" style="width: 5%;">
+            <input type="range" min="0" max="255" id="bluebar" oninput="printValue()">
+        </div>
+        
+
+        <script>
+
+            function printValue(){
+                let R = document.getElementById("redbar").value;
+                document.getElementById("redvalue").value = R;
+
+                let G = document.getElementById("greenbar").value;
+                document.getElementById("greenvalue").value = G;
+
+                let B = document.getElementById("bluebar").value;
+                document.getElementById("bluevalue").value = B;
+
+                let color = "rgb("+ R + ", "  + G + ", " + B + ")";
+
+                document.getElementById("colorbox").style.backgroundColor = color;  
+            } 
+        </script>
+
+    </body>
+</html>

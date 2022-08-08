@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <body style="text-align:center ;">
+        <h2 style="color: violet;">1.  This is basic example in Javascript</h2>
+        <input  type="text" id="inPut" oninput="display()">
+        <p style="color: violet; font: bold; font-size: 40px;" id="outPut"></p>
+        
+
+        <script>
+            function display(){
+                let wordData = document.getElementById("inPut").value;
+                document.getElementById("outPut").textContent = wordData;
+            }
+            
+
+        </script>
+    </body>
+</html>

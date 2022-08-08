@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+
+<body style="text-align: center">
+    <h2 style="color: violet">5. Add Dropdown menu and make Time Converter.</h2>
+
+    <select style="width: 22.5%" name="converters" id="mainBar" onclick="Parameter()">
+        <option value="speed" selected>Speed</option>
+        <option value="temperature">Temperature</option>
+        <option value="time">Time</option>
+    </select>
+    <br />
+    <br />
+
+    <div id="DEMO" style="display: block">
+        <input style="height: 25px" type="text" /> =
+        <input style="height: 25px" type="text" />
+    </div>
+
+    <div id="SPEED" style="display: none">
+        <input style="height: 25px" type="text" id="box5" value="0" oninput="convertMK()" />
+        =
+        <input style="height: 25px" type="text" id="box6" value="0" oninput="convertKM()" />
+    </div>
+
+    <div id="TEMP" style="display: none">
+        <input style="height: 25px" type="text" id="box1" value="0" oninput="convertCF()" />
+        =
+        <input style="height: 25px" type="text" id="box2" value="0" oninput="convertFC()" />
+    </div>
+
+    <div id="TIME" style="display: none">
+        <input style="height: 25px" type="text" id="box3" value="0" oninput="convertSM()" />
+        =
+        <input style="height: 25px" type="text" id="box4" value="0" oninput="convertMS()" />
+    </div>
+
+    <br />
+
+    <input type="text" id="para1" value="" /> &nbsp;&nbsp;&nbsp;<input type="text" id="para2" value="" />
+
+    <script>
+
+
+        function convertCF() {
+            let degFahr = document.getElementById("box1").value;
+            degFahr = degFahr * 1.8 + 32;
+            document.getElementById("box2").value = degFahr;
+        }
+
+        function convertFC() {
+            let degCel = document.getElementById("box2").value;
+            degCel = (degCel - 32) / 1.8;
+            document.getElementById("box1").value = degCel;
+        }
+
+        function convertSM() {
+            let sec = document.getElementById("box3").value;
+            sec = sec / 60;
+            document.getElementById("box4").value = sec;
+        }
+
+        function convertMS() {
+            let min = document.getElementById("box4").value;
+            min = min * 60;
+            document.getElementById("box3").value = min;
+        }
+
+        function convertMK() {
+            let meter = document.getElementById("box5").value;
+            meter = meter * 3.6;
+            document.getElementById("box6").value = meter;
+        }
+
+        function convertKM() {
+            let kmeter = document.getElementById("box6").value;
+            kmeter = kmeter / 3.6;
+            document.getElementById("box5").value = kmeter;
+        }
+
+        function Parameter() {
+            let setPara = document.getElementById("mainBar").value;
+            hide();
+
+            if (setPara == "speed") {
+                document.getElementById("para1").value = "Mt per sec";
+                document.getElementById("para2").value = "Km per hour";
+                document.getElementById("SPEED").style.display = "block" 
+                
+            } else if (setPara == "temperature") {
+                document.getElementById("para1").value = "Celsius";
+                document.getElementById("para2").value = "Fahrenheit";
+                document.getElementById("TEMP").style.display = "block";
+                
+            } else if (setPara == "time") {
+                document.getElementById("para1").value = "Seconds";
+                document.getElementById("para2").value = "Minutes";
+                document.getElementById("TIME").style.display = "block";
+                
+            }
+        }
+
+        function hide() {
+            document.getElementById("DEMO").style.display = "none";
+            document.getElementById("TEMP").style.display = "none";
+            document.getElementById("TIME").style.display = "none";
+            document.getElementById("SPEED").style.display = "none";
+        }
+        
+    </script>
+</body>
+
+</html>
